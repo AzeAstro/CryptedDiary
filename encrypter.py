@@ -77,6 +77,7 @@ def createRecord(key):
     record['time']=crypter.encrypt(time.encode()).decode()
     record['title']=crypter.encrypt(title.encode()).decode()
     record['context']=crypter.encrypt(context.encode()).decode()
+    record['full']=crypter.encrypt(f"Time: {time}\nTitle: {title}\n\nContext:\n{context}".encode()).decode()
     return record
 
 
